@@ -1,0 +1,4 @@
+listenport   = "[::]:5050"
+secret       = "SECRET"
+storeDir     = "/prosody-filer/uploads/"
+uploadSubDir = "HTTP_UPLOAD_SUB_DIR"
