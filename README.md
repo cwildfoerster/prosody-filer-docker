@@ -1,7 +1,7 @@
 # prosody-filer-docker
 This docker image packages [prosody-filer](https://github.com/ThomasLeister/prosody-filer) to be used with [nginx-proxy](https://github.com/jwilder/nginx-proxy).
 
-# Example docker-compose.yml
+### Example docker-compose.yml
 ```
 version: '2.1'
 services:
