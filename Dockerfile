@@ -7,6 +7,8 @@ ENV PROSODY_FILER_VERSION 1.0.1
 ENV SECRET ""
 ENV HTTP_UPLOAD_SUB_DIR "upload/"
 
+RUN apk add curl
+
 RUN mkdir -p /prosody-filer/uploads
 
 COPY config.toml /prosody-filer/config.toml
