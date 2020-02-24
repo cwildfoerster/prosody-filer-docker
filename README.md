@@ -2,7 +2,8 @@
 This docker image packages [prosody-filer](https://github.com/ThomasLeister/prosody-filer) to be used with [nginx-proxy](https://github.com/jwilder/nginx-proxy).
 
 # Example docker-compose.yml
-```version: '2.1'
+```
+version: '2.1'
 services:
   prosody:
     restart: unless-stopped
@@ -41,15 +42,19 @@ services:
 networks:
   nginx-proxy-network:
     external:
-      name: nginx-proxy-network```
+      name: nginx-proxy-network
+```
 
 Add this to your `prosody.cfg.lua` and make sure to enable the `http_upload_external` module:
-```http_upload_external_base_url = "https://upload.example.com/upload/"
+```
+http_upload_external_base_url = "https://upload.example.com/upload/"
 http_upload_external_secret = "change-me"
-http_upload_external_file_size_limit = 100000000```
+http_upload_external_file_size_limit = 100000000
+```
 
 There is one more step if you're using `nginx-proxy`. You need to create a vhost configuration in `/etc/nginx/vhost.d/upload.example.com` and add:
-```client_max_body_size 100m;
+```
+client_max_body_size 100m;
 
 location /upload/ {
     if ( $request_method = OPTIONS ) {
@@ -64,6 +69,7 @@ location /upload/ {
 
     proxy_pass http://prosody-filer;
     proxy_request_buffering off;
-}```
+}
+```
 
 **Make sure you use the correct `proxy_pass` hostname, as in your `container_name` or copy it from the generated `default.conf`**
