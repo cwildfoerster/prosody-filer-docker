@@ -2,7 +2,7 @@ FROM alpine:latest
 
 LABEL maintainer "Constantin Wildförster <constantin@wildfoerster.org>"
 
-ENV PROSODY_FILER_VERSION 1.0.1
+ENV PROSODY_FILER_VERSION 1.0.2
 
 ENV SECRET ""
 ENV HTTP_UPLOAD_SUB_DIR "upload/"
