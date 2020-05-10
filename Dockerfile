@@ -14,7 +14,7 @@ RUN mkdir -p /prosody-filer/uploads
 COPY config.toml /prosody-filer/config.toml
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-ADD https://github.com/ThomasLeister/prosody-filer/releases/download/v${PROSODY_FILER_VERSION}/prosody-filer /prosody-filer/prosody-filer
+ADD https://github.com/ThomasLeister/prosody-filer/releases/download/v${PROSODY_FILER_VERSION}/prosody-filer_linux_x86_64 /prosody-filer/prosody-filer
 
 RUN chmod +x /docker-entrypoint.sh && chmod +x /prosody-filer/prosody-filer
 
